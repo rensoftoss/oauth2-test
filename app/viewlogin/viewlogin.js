@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.viewlogin', ['ngRoute'])
+angular.module('oauth2TestApp.viewlogin', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/viewlogin', {

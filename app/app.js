@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('myApp', [
+angular.module('oauth2TestApp', [
     'ngRoute',
-    'myApp.viewlogin',
-    'myApp.viewresource',
-    'myApp.viewcallback'
+    'oauth2TestApp.viewlogin',
+    'oauth2TestApp.viewresource',
+    'oauth2TestApp.viewcallback'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
 

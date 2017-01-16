@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.viewcallback', ['ngRoute'])
+angular.module('oauth2TestApp.viewcallback', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/viewcallback', {

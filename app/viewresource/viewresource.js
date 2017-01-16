@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.viewresource', ['ngRoute'])
+angular.module('oauth2TestApp.viewresource', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/viewresource', {
