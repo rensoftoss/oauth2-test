@@ -3,17 +3,18 @@
 angular.module('myApp', [
     'ngRoute',
     'myApp.viewlogin',
-    'myApp.viewresource'
+    'myApp.viewresource',
+    'myApp.viewcallback'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
 
     $routeProvider.when('/', {
-        templateUrl: 'loginview/viewlogin.html',
+        templateUrl: 'viewlogin/viewlogin.html',
         controller: 'loginController'
     });
 
     $routeProvider.when('/login', {
-        templateUrl: 'loginview/viewlogin.html',
+        templateUrl: 'viewlogin/viewlogin.html',
         controller: 'loginController'
     });
 

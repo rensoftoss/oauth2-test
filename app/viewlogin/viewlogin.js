@@ -9,8 +9,8 @@ angular.module('myApp.viewlogin', ['ngRoute'])
   });
 }])
 
-.controller('loginController', [function() {
-    // $scope.login = function() {
-    //     window.location.href = "https://api.imgur.com/oauth2/authorize?client_id=" + "CLIENT_ID_HERE" + "&response_type=token"
-    // }
-}]);
+.controller('loginController', function($scope) {
+    $scope.login = function() {
+        window.location.href = "https://api.imgur.com/oauth2/authorize?client_id=" + "CLIENT_ID_HERE" + "&response_type=token"
+    }
+});
