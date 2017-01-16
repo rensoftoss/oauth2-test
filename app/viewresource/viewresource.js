@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('oauth2TestApp.viewresource', ['ngRoute'])
+angular.module('oauth2TestApp.viewresource', ['ngRoute', 'ngCookies'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/viewresource', {
@@ -9,7 +9,14 @@ angular.module('oauth2TestApp.viewresource', ['ngRoute'])
   });
 }])
 
-.controller('resourceController', [function() {
+.controller('resourceController', function($scope, $location, $cookies, pingApiService) {
+    $scope.response = "";
+    $scope.accessToken = $cookies.get('token');
 
-    // $scope.accessToken = JSON.parse(window.localStorage.getItem("imgur")).oauth.access_token;
-}]);
+    pingApiService.getPing($scope.accessToken)
+    .success(function (response) {
+        $scope.response = response;
+    }).error(function () {
+        $location.path("/login");
+    });
+});

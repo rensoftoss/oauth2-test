@@ -9,6 +9,8 @@ angular.module('oauth2TestApp.viewcallback', ['ngRoute'])
   });
 }])
 
-.controller('callbackController', [function() {
+.controller('callbackController', function($scope) {
 
-}]);
+    $cookies.put('token', $scope.data);
+    // $scope.accessToken = JSON.parse(window.localStorage.getItem("imgur")).oauth.access_token;
+});
