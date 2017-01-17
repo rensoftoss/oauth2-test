@@ -10,6 +10,10 @@ angular.module('oauth2TestApp.viewlogin', ['ngRoute'])
 }])
 
 .controller('loginController', function($scope, $timeout) {
+    $scope.linkAuth = "https://localhost:8080/cas/oauth2.0/authorize"
+    $scope.clientId = "testclient"
+    $scope.redirectUrl = "https://localhost:8000/callback";
+
     $scope.counter = 3;
 
     $scope.onTimeout = function(){
@@ -25,7 +29,7 @@ angular.module('oauth2TestApp.viewlogin', ['ngRoute'])
     var mytimeout = $timeout($scope.onTimeout,1000);
 
     $scope.login = function() {
-        window.location.href = "https://api.imgur.com/oauth2/authorize?client_id=" + "CLIENT_ID_HERE" + "&response_type=token"
+        window.location.href = $scope.linkAuth + "?response_type=token&client_id=" + $scope.clientId + "&redirect_uri=" + $scope.redirectUrl;
     };
 
 });
